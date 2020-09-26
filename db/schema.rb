@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_11_25_113109) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "collections", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_113109) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.integer "collection_id"
+    t.bigint "collection_id"
     t.string "name"
     t.string "image_url"
     t.datetime "created_at", null: false
