@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @collection.banner_url %>');">
+  <div class="container">
+    <h1><%= @collection.name %></h1>
+  </div>
+</div>
+
+<div class="pt-30 container">
+  <div class="cards">
+    <% @collection.movies.each do |movie| %>
+      <%= render "collections/movie_card", movie: movie %>
+    <% end %>
+  </div>
+  <div class="pt-30 row justify-content-center">
+    <div class="col-12 col-md-4">
+      <h4 class="text-center">Add a movie</h4>
+      <%= simple_form_for [ @collection, @movie ] do |f| %>
+        <%= f.input :name, placeholder: "Palm tree" %>
+        <%= f.input :image_url, placeholder: "https://some_nice_image_found_on_google.jpg" %>
+        <div class="form-actions">
+          <%= f.submit "Add", class: "btn btn-flat" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

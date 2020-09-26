@@ -1,0 +1,4 @@
+<div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.image_url %>)">
+  <%= movie.name %>
+  <%= link_to "+", movie_path(movie), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+</div>

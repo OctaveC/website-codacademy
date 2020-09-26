@@ -1,0 +1,52 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= image_path('home_banner.jpg') %>)">
+  <div class="container">
+    <h1>Simple Movie Manager</h1>
+    <p>Make movies lists for the ones you've watched, plan to watch, or stopped watching.</p>
+    <%= link_to "Discover", "#how", class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <h2 id="how" class="text-center">How does it work?</h2>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <%= link_to new_collection_path do %>
+          <div class="icon">
+            <%= image_tag "collection.svg" %>
+          </div>
+        <% end %>
+        <p class="text-center fs-24">Create your collection</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <%= link_to new_collection_path do %>
+          <div class="icon">
+            <%= image_tag "circles.svg" %>
+          </div>
+        <% end %>
+        <p class="text-center fs-24">Add your movies</p>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <%= link_to new_collection_path do %>
+          <div class="icon">
+            <%= image_tag "watering.svg" %>
+          </div>
+        <% end %>
+        <p class="text-center fs-24">Manage your daily activity</p>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="text-center">Your movie lists</h2>
+    <div class="cards">
+      <% @collections.each do |collection| %>
+        <%= render "collection_card", collection: collection %>
+      <% end %>
+    </div>
+  </div>
+  <div class="section">
+    <div class="text-center">
+      <%= link_to "Create my collection", new_collection_path, class: "btn btn-flat" %>
+    </div>
+  </div>
+</div>

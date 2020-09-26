@@ -1,0 +1,12 @@
+<%= link_to collection_path(collection) do %>
+  <div class="card-collection">
+    <%= image_tag collection.banner_url %>
+    <div class="card-collection-infos">
+      <div>
+        <h2><%= collection.name %></h2>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
