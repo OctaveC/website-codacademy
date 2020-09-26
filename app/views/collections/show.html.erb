@@ -14,7 +14,7 @@
     <div class="col-12 col-md-4">
       <h4 class="text-center">Add a movie</h4>
       <%= simple_form_for [ @collection, @movie ] do |f| %>
-        <%= f.input :name, placeholder: "Palm tree" %>
+        <%= f.input :name, placeholder: "Movie" %>
         <%= f.input :image_url, placeholder: "https://some_nice_image_found_on_google.jpg" %>
         <div class="form-actions">
           <%= f.submit "Add", class: "btn btn-flat" %>
